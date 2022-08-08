@@ -26,8 +26,8 @@ public class TestNoSuchOrder extends BaseTest {
     }
 
     //Набор тестовых данных
-    @Parameterized.Parameters
-    public static Object[][] getDataTests(){
+    @Parameterized.Parameters(name = "Тестовые данные: {0}")
+    public static Object[][] getDataTests() {
 
         return new Object[][]{
                 {"1234567890"},
@@ -40,7 +40,7 @@ public class TestNoSuchOrder extends BaseTest {
 
     //Тест, проверяющий отображение страницы с сообщением об отсутствии товара, если введен некорректный номер
     @Test
-    public void TestPageNoSuchOrder(){
+    public void TestPageNoSuchOrder() {
 
         mainPage.openPage();
         mainPage.clickOrderStatusButton();

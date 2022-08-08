@@ -28,8 +28,8 @@ public class TestLogoScooter extends BaseTest {
     }
 
     //Набор тестовых данных
-    @Parameterized.Parameters
-    public static Object[][] getDataTests(){
+    @Parameterized.Parameters(name = "Тестовые данные: {0}")
+    public static Object[][] getDataTests() {
 
         return new Object[][]{
                 {MainPage.pageURL},
@@ -40,7 +40,7 @@ public class TestLogoScooter extends BaseTest {
 
     //Тест для проверки перехода на Главную страницу при нажатии на логотип "Самокат"
     @Test
-    public void testLogoScooterClick(){
+    public void testLogoScooterClick() {
 
         driver.get(dataURL);
         new WebDriverWait(driver, 3)

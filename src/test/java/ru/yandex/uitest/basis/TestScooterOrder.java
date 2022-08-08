@@ -44,8 +44,8 @@ public class TestScooterOrder extends BaseTest {
     }
 
     //Набор тестовых данных
-    @Parameterized.Parameters
-    public static Object[][] getDataTests(){
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1} {2} {3} {4} {5} {6} {7} {8}")
+    public static Object[][] getDataTests() {
 
         return new Object[][]{
                 {
@@ -76,7 +76,7 @@ public class TestScooterOrder extends BaseTest {
 
     //Тест№1 - Тест для проверки заказа самоката (весь флоу позитивного сценария, точка входа -> кнопка Заказать, расположенная в хедере главной страницы)
     @Test
-    public void positiveTestsOrderClickHeaderButton(){
+    public void positiveTestsOrderClickHeaderButton() {
 
         mainPage.openPage();
         mainPage.clickHeaderOrderButton();
@@ -89,7 +89,7 @@ public class TestScooterOrder extends BaseTest {
 
     //Тест№2 - Тест для проверки заказа самоката (весь флоу позитивного сценария, точка входа -> кнопка Заказать, расположенная внизу главной страницы)
     @Test
-    public void positiveTestsOrderClickFooterButton(){
+    public void positiveTestsOrderClickFooterButton() {
 
         mainPage.openPage();
         mainPage.clickFooterOrderButton();

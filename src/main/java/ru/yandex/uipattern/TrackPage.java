@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 //POM страницы отслеживания заказа
-public class TrackPage{
+public class TrackPage {
     WebDriver driver;
 
     //Конструктор класса TrackPage
-    public TrackPage(WebDriver driver){
+    public TrackPage(WebDriver driver) {
         this.driver = driver;
     }
 

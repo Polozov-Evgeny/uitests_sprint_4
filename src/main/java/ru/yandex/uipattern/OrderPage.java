@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 //POM Страницы заказа товара
-public class OrderPage{
+public class OrderPage {
 
     WebDriver driver;
 
     //Конструктор класса OrderPage
-    public OrderPage(WebDriver driver){
+    public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -66,39 +66,39 @@ public class OrderPage{
     //<-----МЕТОДЫ КЛАССА MainPage----->
     //РАЗДЕЛ "Для кого самокат"
     //Заполнение поля Имя
-    public void inputName(String name){
+    public void inputName(String name) {
         driver.findElement(fieldName).sendKeys(name);
     }
 
     //Заполнение поля Фамилия
-    public void inputLastName(String lastName){
+    public void inputLastName(String lastName) {
         driver.findElement(fieldLastName).sendKeys(lastName);
     }
 
     //Заполнение поля Адрес
-    public void inputAddress(String address){
+    public void inputAddress(String address) {
         driver.findElement(fieldAddress).sendKeys(address);
     }
 
     //Заполнение поля Станция метро
-    public void inputMetro(String xpathItemMetro){
+    public void inputMetro(String xpathItemMetro) {
         driver.findElement(dropdownMetro).click();
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath(xpathItemMetro)));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath(xpathItemMetro)));
         driver.findElement(By.xpath(xpathItemMetro)).click();
     }
 
     //Заполнение поля Телефон
-    public void inputPhone(String phone){
+    public void inputPhone(String phone) {
         driver.findElement(fieldPhone).sendKeys(phone);
     }
 
     //Клик на кнопку Далее раздела "Для кого самокат"
-    public void clickNextButton(){
+    public void clickNextButton() {
         driver.findElement(nextButton).click();
     }
 
     //Общий сценарий раздела "Для кого самокат"
-    public void generalScenarioPageForWhomScooter(String name, String lastName, String address, String xpathItemMetro, String phone){
+    public void generalScenarioPageForWhomScooter(String name, String lastName, String address, String xpathItemMetro, String phone) {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(nextButton));
         inputName(name);
@@ -111,35 +111,35 @@ public class OrderPage{
 
     //РАЗДЕЛ "Про аренду"
     //Выбор Даты доставки
-    public void inputWhenToBring(String xpathDate){
+    public void inputWhenToBring(String xpathDate) {
         driver.findElement(fieldWhenToBring).click();
         driver.findElement(By.xpath(xpathDate)).click();
     }
 
     //Выбор Срока аренды
-    public void inputRentalPeriod(String xpathPeriod){
+    public void inputRentalPeriod(String xpathPeriod) {
         driver.findElement(dropdownRentalPeriod).click();
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath(xpathPeriod)));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath(xpathPeriod)));
         driver.findElement(By.xpath(xpathPeriod)).click();
     }
 
     //Выбор Цвета самоката
-    public void clickCheckboxColor(By checkbox){
+    public void clickCheckboxColor(By checkbox) {
         driver.findElement(checkbox).click();
     }
 
     //Заполнение поле Комментарий
-    public void inputComment(String comText){
+    public void inputComment(String comText) {
         driver.findElement(fieldComment).sendKeys(comText);
     }
 
     //Клик на кнопку Заказать раздела "Про аренду"
-    public void clickTotalOrderButton(){
+    public void clickTotalOrderButton() {
         driver.findElement(totalOrderButton).click();
     }
 
     //Общий сценарий раздела "Про аренду"
-    public void generalScenarioPageAboutRent(String xpathDate, String xpathPeriod, By checkbox, String comText){
+    public void generalScenarioPageAboutRent(String xpathDate, String xpathPeriod, By checkbox, String comText) {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(totalOrderButton));
         inputWhenToBring(xpathDate);
@@ -150,14 +150,14 @@ public class OrderPage{
     }
 
     //Клик на кнопку Да в модальном окне "Хотите оформить заказ?"
-    public void clickYesButton(){
+    public void clickYesButton() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(yesButton));
         driver.findElement(yesButton).click();
     }
 
     //Получение текста сообщения "Заказ оформлен"
-    public String getTextOrderIsProcessed(){
+    public String getTextOrderIsProcessed() {
         return driver.findElement(orderIsProcessed).getText();
     }
 }
